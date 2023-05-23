@@ -2,7 +2,7 @@
 Api de Cardapio utilizando a arquitetura Clean
 O objetivo dessa api é para estudo e aplicação na pratica de um sistema de cardapio de um restaurante, escolhi usar a arquitetura clean por algumas de suas vantagens como: separação de responsabilidades, organização do código, flexibilidade, facilidade de manutenção entre outras.
 
-##Tecnologias utilizadas
+## Tecnologias utilizadas
 - ASP.NET Core 5.0
 - Microsoft.EntityFrameworkCore.InMemory 5.0.8
 - Microsoft.EntityFrameworkCore.SqlServer 5.0.8
