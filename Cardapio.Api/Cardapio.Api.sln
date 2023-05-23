@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardapio.Api", "Cardapio.Api.csproj", "{85F8AA6B-FEF8-4B9F-9CE3-9887832E0F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cardapio.Api", "Cardapio.Api.csproj", "{85F8AA6B-FEF8-4B9F-9CE3-9887832E0F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardapio.Application", "..\Cardapio.Application\Cardapio.Application.csproj", "{F16E628B-0B17-4604-BD57-E87A70E8B503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cardapio.Application", "..\Cardapio.Application\Cardapio.Application.csproj", "{F16E628B-0B17-4604-BD57-E87A70E8B503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardapio.Domain", "..\Cardapio.Domain\Cardapio.Domain.csproj", "{DD1A6D21-9F08-47F8-AAD7-3B93F454DDC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cardapio.Domain", "..\Cardapio.Domain\Cardapio.Domain.csproj", "{DD1A6D21-9F08-47F8-AAD7-3B93F454DDC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardapio.Persistence", "..\Cardapio.Persistence\Cardapio.Persistence.csproj", "{0C86CCBC-50A7-4218-90C9-1C2510053D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cardapio.Persistence", "..\Cardapio.Persistence\Cardapio.Persistence.csproj", "{0C86CCBC-50A7-4218-90C9-1C2510053D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardapio.Test", "..\Cardapio.Test\Cardapio.Test.csproj", "{39CB0D64-8C8B-4275-B6C7-3BFAB35A14AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0C86CCBC-50A7-4218-90C9-1C2510053D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C86CCBC-50A7-4218-90C9-1C2510053D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C86CCBC-50A7-4218-90C9-1C2510053D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39CB0D64-8C8B-4275-B6C7-3BFAB35A14AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39CB0D64-8C8B-4275-B6C7-3BFAB35A14AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39CB0D64-8C8B-4275-B6C7-3BFAB35A14AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39CB0D64-8C8B-4275-B6C7-3BFAB35A14AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

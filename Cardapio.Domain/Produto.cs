@@ -13,5 +13,7 @@ namespace Cardapio.Domain
         public decimal Valor { get; set; }
 
         public string ImagemUrl { get; set; } = string.Empty;
+
+        public PedidoItem? PedidoItem { get; set; }
     }
 }

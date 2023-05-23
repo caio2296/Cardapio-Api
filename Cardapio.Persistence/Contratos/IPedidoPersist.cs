@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Cardapio.Persistence.Contratos
 {
-    public interface IPedidoPersist
+    public interface IPedidoPersist : IGeralPersist
     {
         Task<Pedido[]> GetAllPedidosAsync();
         Task<Pedido> GetPedidoByIdAsync(int pedidoId);
+        
     }
 }

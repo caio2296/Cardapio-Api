@@ -11,8 +11,9 @@ namespace Cardapio.Domain
         public int Id { get; set; }
 
         public int Mesa { get; set; }
+        public int IdPedidoItem { get; set; }
 
-        public ICollection<PedidoItem> Itens { get; set; } =
+        public ICollection<PedidoItem> ItemPedidos { get; set; } =
          new List<PedidoItem>();
     }
 }

@@ -14,6 +14,8 @@ namespace Cardapio.Application.Helpers
         public CardapioProfile()
         {
             CreateMap<Pedido, PedidoDto>().ReverseMap();
+            CreateMap<Produto, ProdutoDto>().ReverseMap();
+            CreateMap<PedidoItem, PedidoItemDto>().ReverseMap();
         }
 
     }
