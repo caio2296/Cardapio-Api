@@ -24,12 +24,12 @@ Visual Studio 2019 ou superior .NET 5.0 SDK SQL Server
 3.1 Usando o banco em memória:
 basta descomentar o código
 ```csharp
-services.AddDbContext<CardapioContext>(options => options.UseInMemoryDatabase("CardapioDb"));
+//services.AddDbContext<CardapioContext>(options => options.UseInMemoryDatabase("CardapioDb"));
 ```
 e comentar o código
 ```csharp
- //services.AddDbContext<CardapioContext>(options =>
-            //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+ services.AddDbContext<CardapioContext>(options =>
+      options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 ```
 3.2 Usando o banco do sql Server
 Abra o arquivo appsettings.Development.json e configure a string de conexão com o banco de dados. Exemplo:
