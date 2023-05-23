@@ -11,8 +11,8 @@ namespace Cardapio.Application.Contratos
     {
         Task<PedidoDto> AddPedido(PedidoDto model);
         Task<PedidoDto> UpdatePedido(int pedidoId, PedidoDto model);
-        Task<bool> DeletePedido(int produtoId);
+        Task<bool> DeletePedido(int pedidoId);
         Task<PedidoDto[]> GetAllPedidosAsync();
-        Task<PedidoDto> GetPedidoByIdAsync(int edidoId);
+        Task<PedidoDto> GetPedidoByIdAsync(int pedidoId);
     }
 }

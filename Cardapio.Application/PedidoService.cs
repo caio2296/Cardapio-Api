@@ -10,18 +10,16 @@ namespace Cardapio.Application
 {
     public class PedidoService : IPedidoService
     {
-        private readonly IGeralPersist _geralPersist;
         private readonly IPedidoPersist _pedidoPersist;
         private readonly IMapper _mapper;
 
 
 
         public PedidoService(
-            IGeralPersist geralPersist,
             IPedidoPersist pedidoPersist,
              IMapper mapper)
         {
-            _geralPersist = geralPersist;
+            
             _pedidoPersist = pedidoPersist;
             _mapper = mapper;
 
@@ -33,9 +31,9 @@ namespace Cardapio.Application
             try
             {
                 var pedido = _mapper.Map<Pedido>(model);
-                _geralPersist.Add(pedido);
+                _pedidoPersist.Add(pedido);
 
-                if (await _geralPersist.SaveChangesAsync())
+                if (await _pedidoPersist.SaveChangesAsync())
                 {
                     var pedidoRetorno = await _pedidoPersist.GetPedidoByIdAsync(pedido.Id);
                     return _mapper.Map<PedidoDto>(pedidoRetorno);
@@ -49,16 +47,16 @@ namespace Cardapio.Application
             }
         }
 
-        public async Task<bool> DeletePedido(int produtoId)
+        public async Task<bool> DeletePedido(int pedidoId)
         {
             try
             {
-                var pedido = await _pedidoPersist.GetPedidoByIdAsync(produtoId);
+                var pedido = await _pedidoPersist.GetPedidoByIdAsync(pedidoId);
                 if (pedido == null) throw new Exception("Erro ao excluir pedido. Pedido não encontrado!");
 
-                _geralPersist.Delete(pedido);
+                _pedidoPersist.Delete(pedido);
 
-                return await _geralPersist.SaveChangesAsync();
+                return await _pedidoPersist.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -111,9 +109,9 @@ namespace Cardapio.Application
                 model.Id = pedido.Id;
 
                 _mapper.Map(model, pedido);
-                _geralPersist.Update(pedido);
+                _pedidoPersist.Update(pedido);
 
-                if (await _geralPersist.SaveChangesAsync())
+                if (await _pedidoPersist.SaveChangesAsync())
                 {
                     var pedidoRetorno = await _pedidoPersist.GetPedidoByIdAsync(pedido.Id);
                     return _mapper.Map<PedidoDto>(pedidoRetorno);

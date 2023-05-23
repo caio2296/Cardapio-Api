@@ -18,10 +18,10 @@ namespace Cardapio.Api.Controllers
         private readonly IPedidoService _pedidoService;
 
         public PedidoController(
-            IPedidoService jobService,
+            IPedidoService pedidoService,
             IWebHostEnvironment hostEnvironment)
         {
-            _pedidoService = jobService;
+            _pedidoService = pedidoService;
         }
 
         [HttpGet]
@@ -60,7 +60,7 @@ namespace Cardapio.Api.Controllers
         {
             try
             {
-                var pedido = await _pedidoService.AddPedido( model);
+                var pedido = await _pedidoService.AddPedido(model);
                 if (pedido == null) return NoContent();
                 return Ok(pedido);
             }

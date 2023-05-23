@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Cardapio.Persistence
 {
-     public class PedidoPersist : IPedidoPersist
+     public class PedidoPersist :GeralPersist, IPedidoPersist
     {
         private readonly CardapioContext _context;
 
-        public PedidoPersist(CardapioContext context)
+        public PedidoPersist(CardapioContext context) : base(context)
         {
             _context = context;
         }

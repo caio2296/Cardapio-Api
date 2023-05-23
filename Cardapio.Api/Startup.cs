@@ -19,6 +19,7 @@ using Cardapio.Persistence;
 using Cardapio.Persistence.Contexto;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Cardapio.Api
 {
     public class Startup
@@ -33,15 +34,22 @@ namespace Cardapio.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CardapioContext>(options=>
-             options.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = CardapioDb; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"));
+
+
+            services.AddDbContext<CardapioContext>(options => options.UseInMemoryDatabase("CardapioDb"));
+            //services.AddDbContext<CardapioContext>(options =>
+            //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
             services.AddScoped<IPedidoService, PedidoService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IPedidoItemService, PedidoItemService>();
 
             services.AddScoped<IGeralPersist, GeralPersist>();
             services.AddScoped<IPedidoPersist, PedidoPersist>();
+            services.AddScoped<IProdutoPersist, ProdutoPersist>();
+            services.AddScoped<IPedidoItemPersist, PedidoItemPersist>();
 
 
             services.AddControllers();

@@ -10,10 +10,12 @@ namespace Cardapio.Application.Dtos
 {
     public class PedidoDto
     {
-        public int Id { get; set; }
-        [Required]
+        public int  Id { get; set; }
+        [Required(ErrorMessage = "O campo {0} é obrigatório."),
+         Range(0,100)]
         public int Mesa { get; set; }
-        public ICollection<PedidoItem> Itens { get; set; } =
+        public int IdPedidoItem { get; set; }
+        public ICollection<PedidoItem> ItemPedidos { get; set; } =
          new List<PedidoItem>();
     }
 }

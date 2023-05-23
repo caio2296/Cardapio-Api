@@ -13,18 +13,28 @@ namespace Cardapio.Persistence.Contexto
         public CardapioContext(DbContextOptions<CardapioContext> options) : base(options)
         { }
 
-        public DbSet<Produto> produtos;
-
+        public DbSet<Produto> produto { get; set; }
         public DbSet<Pedido> pedido { get; set; }
-        public DbSet<PedidoItem> pedidoItens;
+        public DbSet<PedidoItem> pedidoItem { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Produto>()
+                .HasOne(pi => pi.PedidoItem)
+                .WithOne(pr => pr.Produto);
+
             modelBuilder.Entity<PedidoItem>()
                 .HasOne(p => p.Pedido)
-                .WithMany(p => p.Itens)
-                .HasForeignKey(p => p.PedidoId).HasForeignKey(p => p.ProdutoId);
+                .WithMany(p => p.ItemPedidos)
+                .HasForeignKey(p => p.ProdutoId)
+                .HasForeignKey(pe => pe.PedidoId)
+                .IsRequired(false);
+
+            modelBuilder.Entity<Pedido>()
+                .HasMany(pi => pi.ItemPedidos)
+                .WithOne(p => p.Pedido)
+                .HasForeignKey(p => p.PedidoId);
         }
     }
 }
